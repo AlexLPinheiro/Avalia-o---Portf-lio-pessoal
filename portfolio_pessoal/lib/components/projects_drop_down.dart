@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:portfolio_pessoal/components/card_projeto.dart';
+import 'package:portfolio_pessoal/components/project_card.dart';
 
 class ProjectsDropDown extends StatefulWidget {
   const ProjectsDropDown({super.key});
@@ -11,6 +11,7 @@ class ProjectsDropDown extends StatefulWidget {
 
 class _ProjectsDropDownState extends State<ProjectsDropDown> {
   bool isOpen = false;
+  List<bool> likes = [false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
             });
           },
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.93,
+            width: MediaQuery.of(context).size.width * 1,
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xFFE2E8F0)),
               borderRadius: BorderRadius.circular(10),
@@ -56,11 +57,44 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                     padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
-                        CardProjeto(imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', projectName: 'Safety Sight', projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', stacks: ['React', 'Django']),
+                        CardProjeto(
+                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', 
+                          projectName: 'Safety Sight', 
+                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', 
+                          stacks: ['React', 'Django'],
+                          liked: likes[0],
+                          onLikeToggle: () {
+                            setState(() {
+                              likes[0] = !likes[0];
+                            });
+                          },
+                          ),
                         SizedBox(height: 5),
-                        CardProjeto(imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', projectName: 'Safety Sight', projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', stacks: ['React', 'Django']),
+                        CardProjeto(
+                          imageLink: 'https://avatars.githubusercontent.com/u/257542828?s=200&v=4', 
+                          projectName: 'Orion', 
+                          projectDescription: 'Sistema de ordens de serviço para a ETS', 
+                          stacks: ['Spring Boot', 'NextJS'],
+                          liked: likes[1],
+                          onLikeToggle: () {
+                            setState(() {
+                              likes[1] = !likes[1];
+                            });
+                          },
+                          ),
                         SizedBox(height: 5),
-                        CardProjeto(imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', projectName: 'Safety Sight', projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', stacks: ['React', 'Django']),
+                        CardProjeto(
+                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', 
+                          projectName: 'Safety Sight', 
+                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', 
+                          stacks: ['React', 'Django'],
+                          liked: likes[2],
+                          onLikeToggle: () {
+                            setState(() {
+                              likes[2] = !likes[2];
+                            });
+                          },
+                          ),
                       ],
                     ),
                   ),
@@ -77,3 +111,4 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
     );
   }
 }
+

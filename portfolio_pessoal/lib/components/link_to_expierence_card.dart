@@ -44,7 +44,7 @@ class LinkToExperienceCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Minha jornada",
+                        "Meu trabalho",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -52,7 +52,7 @@ class LinkToExperienceCard extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text("Venha conhecer minha jornada profissional e acadêmica"),
+                          Text("Venha conhecer meus projetos"),
                           SizedBox(width: 2),
                           Icon(
                             Ionicons.arrow_forward,

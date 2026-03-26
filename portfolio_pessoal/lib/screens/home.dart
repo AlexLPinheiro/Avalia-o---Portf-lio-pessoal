@@ -27,6 +27,19 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
+                    "Software Developer at Bosch",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  ),
+                  SizedBox(height: 10,),
+                  Text(
+                    "I’m a developer who loves exploring the full stack and pushing myself with new challenges. "
+                    "I enjoy building things, breaking them, and figuring out how to make them better. Recently, "
+                    "I’ve been diving deeper into system design, software architecture, and backend development "
+                    "with Spring Boot — areas that really keep me curious and motivated to grow. I’m always looking "
+                    "for new ideas to learn, experiment with, and turn into something useful.",
+                  ),
+                  SizedBox(height: 40,),
+                  Text(
                     "Redes de contato:",
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
