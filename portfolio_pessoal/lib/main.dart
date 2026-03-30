@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:portfolio_pessoal/screens/experience.dart';
-import 'screens/home.dart';
+import 'package:portfolio_pessoal/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,47 +13,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF3B82F6),
+          brightness: Brightness.dark,
+        ),
+        scaffoldBackgroundColor: const Color(0xFF050816),
+        cardColor: const Color(0xFF0B1120),
+        dividerColor: const Color(0xFF1D4ED8),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF050816),
+          selectedItemColor: Color(0xFF60A5FA),
+          unselectedItemColor: Color(0xFF7C8AA5),
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
-      home: const NavBar(),
-    );
-  }
-}
-
-
-class NavBar extends StatefulWidget {
-  const NavBar({super.key});
-
-  @override
-  State<NavBar> createState() => _NavBarState();
-}
-
-class _NavBarState extends State<NavBar> {
-
-  List<Widget> telas = [Home(), Experience()];
-
-  int index_atual = 0;
-
-  void mudar_index(int novo_index){
-    setState(() {
-      index_atual = novo_index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: telas[index_atual],
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Ionicons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Ionicons.person), label: "Experience"),
-      ],
-      currentIndex: index_atual,
-      onTap: mudar_index,
-      
-      ),
+      home: const SplashScreen(),
     );
   }
 }

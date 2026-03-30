@@ -29,8 +29,16 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
           child: Container(
             width: MediaQuery.of(context).size.width * 1,
             decoration: BoxDecoration(
-              border: Border.all(color: Color(0xFFE2E8F0)),
-              borderRadius: BorderRadius.circular(10),
+              color: Color(0xFF0B1120),
+              border: Border.all(color: Color(0xFF2563EB), width: 1.2),
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFF020617).withOpacity(0.35),
+                  blurRadius: 18,
+                  offset: Offset(0, 10),
+                ),
+              ],
             ),
             child: Column(
               children: [
@@ -40,13 +48,17 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Conheça os projetos do meu portfólio",
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        "Conheca os projetos do meu portfolio",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
                       ),
                       Icon(
                         isOpen
                             ? Ionicons.chevron_up
                             : Ionicons.chevron_down,
+                        color: Color(0xFF60A5FA),
                       ),
                     ],
                   ),
@@ -58,9 +70,9 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                     child: Column(
                       children: [
                         CardProjeto(
-                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', 
-                          projectName: 'Safety Sight', 
-                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', 
+                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4',
+                          projectName: 'Safety Sight',
+                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visao computacional',
                           stacks: ['React', 'Django'],
                           liked: likes[0],
                           onLikeToggle: () {
@@ -68,12 +80,12 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                               likes[0] = !likes[0];
                             });
                           },
-                          ),
+                        ),
                         SizedBox(height: 5),
                         CardProjeto(
-                          imageLink: 'https://avatars.githubusercontent.com/u/257542828?s=200&v=4', 
-                          projectName: 'Orion', 
-                          projectDescription: 'Sistema de ordens de serviço para a ETS', 
+                          imageLink: 'https://avatars.githubusercontent.com/u/257542828?s=200&v=4',
+                          projectName: 'Orion',
+                          projectDescription: 'Sistema de ordens de servico para a ETS',
                           stacks: ['Spring Boot', 'NextJS'],
                           liked: likes[1],
                           onLikeToggle: () {
@@ -81,12 +93,12 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                               likes[1] = !likes[1];
                             });
                           },
-                          ),
+                        ),
                         SizedBox(height: 5),
                         CardProjeto(
-                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4', 
-                          projectName: 'Safety Sight', 
-                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visão computacional', 
+                          imageLink: 'https://avatars.githubusercontent.com/u/230382115?s=200&v=4',
+                          projectName: 'Safety Sight',
+                          projectDescription: 'Projeto daora para reconhecimento de EPIs utilizando visao computacional',
                           stacks: ['React', 'Django'],
                           liked: likes[2],
                           onLikeToggle: () {
@@ -94,7 +106,7 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
                               likes[2] = !likes[2];
                             });
                           },
-                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -111,4 +123,3 @@ class _ProjectsDropDownState extends State<ProjectsDropDown> {
     );
   }
 }
-

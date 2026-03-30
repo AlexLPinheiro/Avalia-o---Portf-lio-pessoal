@@ -28,20 +28,31 @@ class Home extends StatelessWidget {
                 children: [
                   Text(
                     "Software Developer at Bosch",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Text(
                     "I’m a developer who loves exploring the full stack and pushing myself with new challenges. "
                     "I enjoy building things, breaking them, and figuring out how to make them better. Recently, "
                     "I’ve been diving deeper into system design, software architecture, and backend development "
-                    "with Spring Boot — areas that really keep me curious and motivated to grow. I’m always looking "
+                    "with Spring Boot - areas that really keep me curious and motivated to grow. I’m always looking "
                     "for new ideas to learn, experiment with, and turn into something useful.",
+                    style: TextStyle(
+                      color: Color(0xFFB7C3D7),
+                      height: 1.5,
+                    ),
                   ),
-                  SizedBox(height: 40,),
+                  SizedBox(height: 40),
                   Text(
                     "Redes de contato:",
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFE5EEF9),
+                    ),
                   ),
                   SizedBox(height: 5),
                   ContactCard(),

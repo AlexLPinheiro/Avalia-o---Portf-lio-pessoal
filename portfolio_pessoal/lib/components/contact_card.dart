@@ -9,8 +9,16 @@ class ContactCard extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.93,
       decoration: BoxDecoration(
-        border: Border.all(color: Color(0xFFB9DEF0)),
-        borderRadius: BorderRadius.circular(10),
+        color: Color(0xFF0B1120),
+        border: Border.all(color: Color(0xFF2563EB), width: 1.2),
+        borderRadius: BorderRadius.circular(14),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF020617).withOpacity(0.35),
+            blurRadius: 18,
+            offset: Offset(0, 10),
+          ),
+        ],
       ),
       child: Padding(
         padding: EdgeInsets.all(10),
@@ -44,7 +52,7 @@ class ContactCard extends StatelessWidget {
                 ),
               ),
               url: 'https://www.instagram.com/palmeiras/', 
-              width: MediaQuery.of(context).size.width * 0.2
+              width: MediaQuery.of(context).size.width * 1
               ),
 
 
