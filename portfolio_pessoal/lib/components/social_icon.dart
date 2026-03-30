@@ -23,7 +23,7 @@ class SocialIcon extends StatelessWidget {
       child: InkWell(
         onTap: () => _abrirLink(url),
         child: Padding(
-          padding: const EdgeInsets.all(8.0), // aumenta área de clique
+          padding: const EdgeInsets.all(8.0), 
           child: SizedBox(
             width: width,
             child: image,
